@@ -32,7 +32,7 @@ class MyLinkedList<T> {
 
 	public void remove(T element) {
 		Node<T> previous = this.head;		
-		Node<T> current = this.head.next;
+		Node<T> current = previous.next;
 		while (current.element != element) {
 			previous = current;
 			current = current.next;
