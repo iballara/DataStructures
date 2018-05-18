@@ -24,6 +24,14 @@ class MyArrayList<T> {
 		this.size++;
 	}
 
+	public void set(T element, int index) {
+		checkArrayIsFull();
+		for (int i = size - 1; i >= index; i--)	
+			array[i+1] = array[i];
+		array[index] = element;
+		this.size++;	
+	}	
+
 	public T get(int index) {
 		if (index >= size) return null;
 		return (T) array[index];
@@ -78,14 +86,14 @@ class Main {
 
 	public static void main(String[] args) {
 
-		final MyArrayList<String> list = new MyArrayList<>(3);
+		final MyArrayList<String> list = new MyArrayList<>(5);
 	
 		list.add("One");
 		list.add("Two");
 		list.add("Three");
-		list.remove(1);
-		list.add("One");
+		list.add("Four");
 		list.add("Five");
+		list.set("3.5", 3);
 		
 		int size = list.size();
 		for (int i = 0; i < size; i++)	
