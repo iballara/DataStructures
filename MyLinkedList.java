@@ -30,15 +30,17 @@ class MyLinkedList<T> {
 		return current.element;
 	}
 
-	public void remove(T element) {
+	public boolean remove(T element) {
 		Node<T> previous = this.head;		
 		Node<T> current = previous.next;
-		while (current.element != element) {
+		while (current.next != null && current.element != element) {
 			previous = current;
 			current = current.next;
 		}
+		if (current.next == null) return false;		
 		previous.next = current.next;
 		this.size--;
+		return true;
 	}
 
 	public T poll() {
@@ -96,6 +98,6 @@ class Main {
 		for (int i = 0; i < size; i++) {
 			String s = list.poll();
 			System.out.println(s);
-		}
+		}	
 	}
 }
