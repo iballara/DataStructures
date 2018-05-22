@@ -1,4 +1,4 @@
-class MyCircularStack<T> {
+class MyStack<T> {
 	
 	private static final int DEFAULT_CAPACITY = 8;
 
@@ -6,13 +6,13 @@ class MyCircularStack<T> {
 	private int capacity;
 	private int size;
 
-	public MyCircularStack() {
+	public MyStack() {
 		array = new Object[DEFAULT_CAPACITY];
 		this.capacity = DEFAULT_CAPACITY;
 		this.size = 0;
 	}
 
-	public MyCircularStack(int capacity) {
+	public MyStack(int capacity) {
 		array = new Object[capacity];
 		this.capacity = capacity;
 		this.size = 0;
@@ -69,7 +69,7 @@ class Main {
 
 	public static void main(String[] args) {
 		
-		final MyCircularStack<String> stack = new MyCircularStack<>();
+		final MyStack<String> stack = new MyStack<>();
 
 		stack.push("One");
 		stack.push("Two");
